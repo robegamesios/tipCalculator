@@ -47,17 +47,30 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupTextFields()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        addNotificationObservers()
+        setDefaults()
         setupView()
         //Show keyboard on appear
-        inputTextField.becomeFirstResponder()
+        if inputTextField.canBecomeFirstResponder {
+            inputTextField.becomeFirstResponder()
+        }
+        updateTotal()
     }
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        super.viewDidDisappear(animated)
+    }
+    
+    // MARK: Setup
+    
     func setupTextFields() {
         inputTextField.delegate = self
         inputTextField.addTarget(self, action: #selector
@@ -160,6 +173,45 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
         } else {
             eachPersonStringLabel.text = "You pay"
         }
+    }
+    
+    func setDefaults() {
+        if !Utility.isFirstLaunch {
+            Utility.saveTipPercentage(value: "15")
+            Utility.saveNumberOfPeople(value: "2")
+            Utility.setfirstLaunch()
+        }
+    }
+    
+    func resetLastTimeOpened(notification: Notification) -> Void {
+        let currentDate = Date()
+        _ = Utility.setLastTimeOpened(date: currentDate)
+    }
+    
+    func resetEntries(notification: Notification) -> Void {
+        if inputTextField.canBecomeFirstResponder {
+            inputTextField.becomeFirstResponder()
+        }
+        
+        let currentDate = Date()
+        guard let lastTimeOpened = Utility.lastTimeOpened else {
+            return
+        }
+        
+        if currentDate.timeIntervalSince(lastTimeOpened) >= 10 * 60 { // 10 minutes
+            inputTextField.text = ""
+            inputTaxTextField.text = ""
+        }
+    }
+    
+    func addNotificationObservers() {
+        let nc = NotificationCenter.default
+        nc.addObserver(forName:Notification.Name(rawValue: Utility.kAppDidEnterBackgroundNotificationKey),
+                       object:nil, queue:nil,
+                       using:resetLastTimeOpened)
+        nc.addObserver(forName:Notification.Name(rawValue: Utility.kAppWillEnterForegroundNotificationKey),
+                       object:nil, queue:nil,
+                       using:resetEntries)
     }
 }
 

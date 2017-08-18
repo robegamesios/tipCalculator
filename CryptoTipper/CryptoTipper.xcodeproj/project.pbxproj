@@ -301,7 +301,7 @@
 				D45A4A181F42698B001D5D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		D45A4A191F42698B001D5D7D /* Build configuration list for PBXNativeTarget "CryptoTipper" */ = {
 			isa = XCConfigurationList;
@@ -310,7 +310,7 @@
 				D45A4A1B1F42698B001D5D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
