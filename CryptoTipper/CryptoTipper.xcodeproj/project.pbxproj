@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF5A8C579C5771670F9C208A /* Pods_CryptoTipper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7EE5C086727FA2DBB15B84 /* Pods_CryptoTipper.framework */; };
 		D45A4A0B1F42698B001D5D7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45A4A0A1F42698B001D5D7D /* AppDelegate.swift */; };
 		D45A4A0D1F42698B001D5D7D /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45A4A0C1F42698B001D5D7D /* CalculatorVC.swift */; };
 		D45A4A101F42698B001D5D7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45A4A0E1F42698B001D5D7D /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D7EE5C086727FA2DBB15B84 /* Pods_CryptoTipper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTipper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45A4A071F42698B001D5D7D /* CryptoTipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTipper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45A4A0A1F42698B001D5D7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D45A4A0C1F42698B001D5D7D /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		D45A4A161F42698B001D5D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D45A4A1C1F43F0AA001D5D7D /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D4A881811F4670BA00F3CDB0 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		EF700AB4AD48DABD3C8E084A /* Pods-CryptoTipper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTipper.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTipper/Pods-CryptoTipper.release.xcconfig"; sourceTree = "<group>"; };
+		FE0BA2356FFFE49F2DE63092 /* Pods-CryptoTipper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTipper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTipper/Pods-CryptoTipper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5A8C579C5771670F9C208A /* Pods_CryptoTipper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				D45A4A091F42698B001D5D7D /* CryptoTipper */,
 				D45A4A081F42698B001D5D7D /* Products */,
+				DBAF18480DD833899A5F006B /* Pods */,
+				E973B28D8D101F95EC6A226F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,23 @@
 			path = CryptoTipper;
 			sourceTree = "<group>";
 		};
+		DBAF18480DD833899A5F006B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE0BA2356FFFE49F2DE63092 /* Pods-CryptoTipper.debug.xcconfig */,
+				EF700AB4AD48DABD3C8E084A /* Pods-CryptoTipper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E973B28D8D101F95EC6A226F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D7EE5C086727FA2DBB15B84 /* Pods_CryptoTipper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D45A4A191F42698B001D5D7D /* Build configuration list for PBXNativeTarget "CryptoTipper" */;
 			buildPhases = (
+				7CD833247F5C50B22DFED82A /* [CP] Check Pods Manifest.lock */,
 				D45A4A031F42698B001D5D7D /* Sources */,
 				D45A4A041F42698B001D5D7D /* Frameworks */,
 				D45A4A051F42698B001D5D7D /* Resources */,
+				54115CFA05D2EE4BCB8427EE /* [CP] Embed Pods Frameworks */,
+				795C383392DF46C3AE4B2ED1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,6 +164,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54115CFA05D2EE4BCB8427EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoTipper/Pods-CryptoTipper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		795C383392DF46C3AE4B2ED1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoTipper/Pods-CryptoTipper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CD833247F5C50B22DFED82A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D45A4A031F42698B001D5D7D /* Sources */ = {
@@ -267,6 +342,7 @@
 		};
 		D45A4A1A1F42698B001D5D7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE0BA2356FFFE49F2DE63092 /* Pods-CryptoTipper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G87QTK58LT;
@@ -280,6 +356,7 @@
 		};
 		D45A4A1B1F42698B001D5D7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF700AB4AD48DABD3C8E084A /* Pods-CryptoTipper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G87QTK58LT;

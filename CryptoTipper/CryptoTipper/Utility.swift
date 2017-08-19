@@ -12,21 +12,56 @@ let kTipPercentageKey = "kTipPercentageKey"
 let kNumberOfPeopleKey = "kNumberOfPeopleKey"
 let kFirstLaunch = "kFirstLaunch"
 let kLastTimeOpened = "kLastTimeOpened"
+let kCurrencyCode = "kCurrencyCode"
 
 class Utility: NSObject {
 
     static let kAppDidEnterBackgroundNotificationKey = "kAppDidEnterBackgroundNotificationKey"
     static let kAppWillEnterForegroundNotificationKey = "kAppWillEnterForegroundNotificationKey"
 
-    static func currencySymbol() -> String {
-        let locale = Locale.current
-        let currencySymbol = locale.currencySymbol
-//        let currencyCode = locale.currencyCode
+    // MARK: Locales
+    
+    static func currencySymbol(code: String) -> (String, String) {
+        let localeIds = Locale.availableIdentifiers
+        for localeId in localeIds {
+            let locale = Locale(identifier: localeId)
+            
+            if locale.regionCode != nil {
+                if locale.regionCode == code,
+                    let symbol = locale.currencySymbol,
+                    let currCode = locale.currencyCode {
+                    return (symbol, currCode)
+                }
+            }
+        }
+        return ("?", "?")
+    }
+    
+    static func formatNumber(code: String, value: Double) -> String {
+        let number = NSNumber(value: value)
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
         
-        return currencySymbol ?? ""
+        // localize to your grouping and decimal separator
+        let localeIds = Locale.availableIdentifiers
+        for localeId in localeIds {
+            let locale = Locale(identifier: localeId)
+            
+            if locale.regionCode != nil {
+                if locale.regionCode == code {
+                    currencyFormatter.locale = locale
+                    if let formattedNumber = currencyFormatter.string(from: number) {
+                        return formattedNumber
+                    }
+                }
+            }
+        }
+        return ""
     }
     
     // MARK: UserDefaults
+    
     static func setfirstLaunch() {
         let defaults = UserDefaults.standard
         defaults.set(true, forKey: kFirstLaunch)
@@ -77,6 +112,20 @@ class Utility: NSObject {
         let numValue = defaults.double(forKey: kNumberOfPeopleKey) 
         let stringValue = String(format: "%0.f", numValue)
         
+        return stringValue
+    }
+    
+    static func saveCountryCode(value: String) {
+        let defaults = UserDefaults.standard
+        defaults.set(value, forKey: kCurrencyCode)
+        defaults.synchronize()
+    }
+    
+    static var savedCountryCode: String {
+        let defaults = UserDefaults.standard
+        guard let stringValue = defaults.object(forKey: kCurrencyCode) as? String else {
+            return ""
+        }
         return stringValue
     }
 }

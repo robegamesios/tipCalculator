@@ -7,21 +7,21 @@
 //
 
 import UIKit
+import CountryPicker
 
-class SettingsVC: UIViewController, UITextFieldDelegate {
+class SettingsVC: UIViewController, UITextFieldDelegate, CountryPickerDelegate {
     
     @IBOutlet weak var tipPercentageTextField: UITextField!
     @IBOutlet weak var numberOfPeopleTextField: UITextField!
-
+    @IBOutlet weak var currencyButton: UIButton!
+    @IBOutlet weak var picker: CountryPicker!
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
     }
     
     func setupView() {
@@ -33,6 +33,17 @@ class SettingsVC: UIViewController, UITextFieldDelegate {
         
         tipPercentageTextField.text = Utility.savedTipPercentage
         numberOfPeopleTextField.text = Utility.savedNumberOfPeople
+
+        let code = Utility.savedCountryCode
+        currencyButton.setTitle(code, for: .normal)
+    }
+    
+    func setupCountryPicker() {
+        //init Picker
+        picker.countryPickerDelegate = self
+        picker.showPhoneNumbers = false
+        picker.isHidden = false
+        picker.setCountry(Utility.savedCountryCode)
     }
     
     // MARK: Control Events
@@ -55,6 +66,11 @@ class SettingsVC: UIViewController, UITextFieldDelegate {
     
     // MARK: IBActions
     
+    @IBAction func currencyButtonTapped(_ sender: UIButton) {
+        showPicker()
+    }
+    
+    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         var tipValue = tipPercentageTextField.text ?? "15"
         if tipPercentageTextField.text == "" {
@@ -74,7 +90,16 @@ class SettingsVC: UIViewController, UITextFieldDelegate {
         
         Utility.saveNumberOfPeople(value: numberOfPeopleValue)
         
+        let code = currencyButton.titleLabel?.text ?? ""
+        Utility.saveCountryCode(value: code)
+        
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: CountryPicker delegate
+    
+    func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
+        currencyButton.setTitle(countryCode, for: .normal)
     }
     
     // MARK: Helpers
@@ -88,5 +113,16 @@ class SettingsVC: UIViewController, UITextFieldDelegate {
         actionSheetController.addAction(okAction)
         self.present(actionSheetController, animated: true, completion: nil)
     }
-
+    
+    func showPicker() {
+        if tipPercentageTextField.isFirstResponder {
+            tipPercentageTextField.resignFirstResponder()
+        }
+        
+        if numberOfPeopleTextField.isFirstResponder {
+            numberOfPeopleTextField.resignFirstResponder()
+        }
+        
+        setupCountryPicker()
+    }
 }

@@ -18,6 +18,12 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var eachPersonPaysLabel: UILabel!
     @IBOutlet weak var tipRateLabel: UILabel!
     @IBOutlet weak var splitLabel: UILabel!
+    @IBOutlet weak var billStringLabel: UILabel!
+    @IBOutlet weak var taxStringLabel: UILabel!
+    
+    var currentCurrency: (String, String) {
+        return Utility.currencySymbol(code: Utility.savedCountryCode)
+    }
     
     var percentTip: Double {
         get {
@@ -49,6 +55,7 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         setupTextFields()
+        setupDefaultCurrencyCode()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -81,7 +88,20 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
             (textFieldDidChange), for: .editingChanged)
     }
     
+    func setupDefaultCurrencyCode() {
+        if Utility.savedCountryCode == "" {
+            let locale = Locale.current
+            guard let code = (locale as NSLocale).object(forKey: .countryCode) as? String else {
+                return
+            }
+            Utility.saveCountryCode(value: code)
+        }
+    }
+    
     func setupView() {
+        billStringLabel.text = "How much is the bill? (\(currentCurrency.0) \(currentCurrency.1))"
+        taxStringLabel.text = "How much is the tax? (\(currentCurrency.0) \(currentCurrency.1))"
+
         tipRateLabel.text = Utility.savedTipPercentage
         splitLabel.text = Utility.savedNumberOfPeople
         checkNumberOfPeople()
@@ -162,9 +182,10 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
         let tipAmount = inputAmount * (percentTip / 100.0)
         let totalAmount = inputAmount + inputTaxAmount + tipAmount
 
-        tipAmountLabel.text = String(format: "\(Utility.currencySymbol())%.2f", tipAmount)
-        totalAmountLabel.text = String(format: "\(Utility.currencySymbol())%.2f", totalAmount)
-        eachPersonPaysLabel.text = String(format: "\(Utility.currencySymbol())%.2f", totalAmount/splitCount)
+        tipAmountLabel.text = Utility.formatNumber(code: Utility.savedCountryCode, value: tipAmount)
+        totalAmountLabel.text = Utility.formatNumber(code: Utility.savedCountryCode, value: totalAmount)
+        eachPersonPaysLabel.text = Utility.formatNumber(code: Utility.savedCountryCode, value: totalAmount/splitCount)
+
     }
     
     func checkNumberOfPeople() {

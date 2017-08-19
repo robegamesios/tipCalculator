@@ -1,0 +1,24 @@
+PODS:
+  - CountryPickerSwift (1.4.4)
+  - MMPickerView (0.0.1)
+
+DEPENDENCIES:
+  - CountryPickerSwift (= 1.4.4)
+  - MMPickerView (from `https://github.com/robegamesios/RE-MMPickerView.git`)
+
+EXTERNAL SOURCES:
+  MMPickerView:
+    :git: https://github.com/robegamesios/RE-MMPickerView.git
+
+CHECKOUT OPTIONS:
+  MMPickerView:
+    :commit: e63a65a4233525316d6fd62f1ce6227ccdcd0eee
+    :git: https://github.com/robegamesios/RE-MMPickerView.git
+
+SPEC CHECKSUMS:
+  CountryPickerSwift: e31e67f2b95eb1fa6ad230e9eb0b49b020526d99
+  MMPickerView: 6ba6bd5d0ef1fd60372d3f5e4fa80ad4237a86a0
+
+PODFILE CHECKSUM: 9ebb3a4c09f7ccb374f7ac61d203a4e0cc833aac
+
+COCOAPODS: 1.2.1
