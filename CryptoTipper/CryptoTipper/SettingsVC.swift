@@ -16,6 +16,8 @@ class SettingsVC: UIViewController, UITextFieldDelegate, CountryPickerDelegate {
     @IBOutlet weak var currencyButton: UIButton!
     @IBOutlet weak var picker: CountryPicker!
     
+    var selectedCountryCode: String = ""
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -23,6 +25,8 @@ class SettingsVC: UIViewController, UITextFieldDelegate, CountryPickerDelegate {
 
         setupView()
     }
+    
+    // MARK: Setup
     
     func setupView() {
         tipPercentageTextField.delegate = self
@@ -34,14 +38,16 @@ class SettingsVC: UIViewController, UITextFieldDelegate, CountryPickerDelegate {
         tipPercentageTextField.text = Utility.savedTipPercentage
         numberOfPeopleTextField.text = Utility.savedNumberOfPeople
 
-        let code = Utility.savedCountryCode
-        currencyButton.setTitle(code, for: .normal)
+        selectedCountryCode = Utility.savedCountryCode
+        let name = Utility.countryName(countryCode: selectedCountryCode) ?? ""
+        let displayName = "\(name) (\(selectedCountryCode))"
+        currencyButton.setTitle(displayName, for: .normal)
     }
     
     func setupCountryPicker() {
         //init Picker
         picker.countryPickerDelegate = self
-        picker.showPhoneNumbers = false
+        picker.showPhoneNumbers = true
         picker.isHidden = false
         picker.setCountry(Utility.savedCountryCode)
     }
@@ -88,9 +94,7 @@ class SettingsVC: UIViewController, UITextFieldDelegate, CountryPickerDelegate {
         }
         
         Utility.saveNumberOfPeople(value: numberOfPeopleValue)
-        
-        let code = currencyButton.titleLabel?.text ?? ""
-        Utility.saveCountryCode(value: code)
+        Utility.saveCountryCode(value: selectedCountryCode)
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
@@ -102,7 +106,9 @@ class SettingsVC: UIViewController, UITextFieldDelegate, CountryPickerDelegate {
     // MARK: CountryPicker delegate
     
     func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
-        currencyButton.setTitle(countryCode, for: .normal)
+        selectedCountryCode = countryCode
+        let displayName = "\(name) (\(countryCode))"
+        currencyButton.setTitle(displayName, for: .normal)
     }
     
     // MARK: Helpers

@@ -37,6 +37,13 @@ class Utility: NSObject {
         return ("?", "?")
     }
     
+    static func countryName(countryCode: String) -> String? {
+        let current = Locale(identifier: "en_US")
+        return current.localizedString(forRegionCode: countryCode) ?? ""
+    }
+    
+    // MARK: Formatters
+    
     static func formatNumber(code: String, value: Double) -> String {
         let number = NSNumber(value: value)
         let currencyFormatter = NumberFormatter()
