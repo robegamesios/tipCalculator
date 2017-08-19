@@ -66,7 +66,27 @@ class Utility: NSObject {
         }
         return ""
     }
-    
+
+    static func formatNumber(formatter: NumberFormatter, code: String, value: Double) -> String {
+        let number = NSNumber(value: value)
+        
+        // localize to your grouping and decimal separator
+        let localeIds = Locale.availableIdentifiers
+        for localeId in localeIds {
+            let locale = Locale(identifier: localeId)
+            
+            if locale.regionCode != nil {
+                if locale.regionCode == code {
+                    formatter.locale = locale
+                    if let formattedNumber = formatter.string(from: number) {
+                        return formattedNumber
+                    }
+                }
+            }
+        }
+        return ""
+    }
+
     // MARK: UserDefaults
     
     static func setfirstLaunch() {

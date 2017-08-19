@@ -49,6 +49,13 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    lazy var currencyFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .currency
+        return formatter
+    }()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -182,9 +189,9 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
         let tipAmount = inputAmount * (percentTip / 100.0)
         let totalAmount = inputAmount + inputTaxAmount + tipAmount
 
-        tipAmountLabel.text = Utility.formatNumber(code: Utility.savedCountryCode, value: tipAmount)
-        totalAmountLabel.text = Utility.formatNumber(code: Utility.savedCountryCode, value: totalAmount)
-        eachPersonPaysLabel.text = Utility.formatNumber(code: Utility.savedCountryCode, value: totalAmount/splitCount)
+        tipAmountLabel.text = Utility.formatNumber(formatter: currencyFormatter, code: Utility.savedCountryCode, value: tipAmount)
+        totalAmountLabel.text = Utility.formatNumber(formatter: currencyFormatter, code: Utility.savedCountryCode, value: totalAmount)
+        eachPersonPaysLabel.text = Utility.formatNumber(formatter: currencyFormatter, code: Utility.savedCountryCode, value: totalAmount/splitCount)
 
     }
     
