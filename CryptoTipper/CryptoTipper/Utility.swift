@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 let kTipPercentageKey = "kTipPercentageKey"
 let kNumberOfPeopleKey = "kNumberOfPeopleKey"
@@ -18,7 +19,7 @@ class Utility: NSObject {
 
     static let kAppDidEnterBackgroundNotificationKey = "kAppDidEnterBackgroundNotificationKey"
     static let kAppWillEnterForegroundNotificationKey = "kAppWillEnterForegroundNotificationKey"
-
+    
     // MARK: Locales
     
     static func currencySymbol(code: String) -> (String, String) {
@@ -87,6 +88,37 @@ class Utility: NSObject {
         return ""
     }
 
+    // MARK: Helpers
+    
+    enum deviceType {
+        case iPhone4
+        case iPhone5
+        case iPhone7
+        case iPhone7Plus
+    }
+    
+    static var deviceSize: deviceType {
+        let screenSize = UIScreen.main.bounds
+        let screenHeight = screenSize.height
+        
+        switch screenHeight {
+        case 480:
+            return .iPhone4
+            
+        case 568:
+            return .iPhone5
+            
+        case 667:
+            return .iPhone7
+            
+        case 736:
+            return .iPhone7Plus
+
+        default:
+            return .iPhone7
+        }
+    }
+    
     // MARK: UserDefaults
     
     static func setfirstLaunch() {

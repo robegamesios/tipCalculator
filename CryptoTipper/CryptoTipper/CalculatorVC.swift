@@ -20,6 +20,8 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var splitLabel: UILabel!
     @IBOutlet weak var billStringLabel: UILabel!
     @IBOutlet weak var taxStringLabel: UILabel!
+    @IBOutlet weak var countryNameLabel: UILabel!
+    @IBOutlet weak var keyboardHeightConstraint: NSLayoutConstraint!
     
     var currentCurrency: (String, String) {
         return Utility.currencySymbol(code: Utility.savedCountryCode)
@@ -111,6 +113,23 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
 
         tipRateLabel.text = Utility.savedTipPercentage
         splitLabel.text = Utility.savedNumberOfPeople
+        
+        if Utility.deviceSize == .iPhone7 {
+            let size: CGFloat = 32.0
+            tipAmountLabel.font = UIFont.systemFont(ofSize: size)
+            totalAmountLabel.font = UIFont.systemFont(ofSize: size)
+            eachPersonPaysLabel.font = UIFont.systemFont(ofSize: size)
+
+        } else if Utility.deviceSize == .iPhone7Plus {
+            let size: CGFloat = 60.0
+            tipAmountLabel.font = UIFont.systemFont(ofSize: size)
+            totalAmountLabel.font = UIFont.systemFont(ofSize: size)
+            eachPersonPaysLabel.font = UIFont.systemFont(ofSize: size)
+        }
+        
+        let countryName = Utility.countryName(countryCode: Utility.savedCountryCode) ?? ""
+        countryNameLabel.text = "\(countryName)"
+        
         checkNumberOfPeople()
     }
     
@@ -235,6 +254,12 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            keyboardHeightConstraint.constant = keyboardSize.height + 4
+        }
+    }
+    
     func addNotificationObservers() {
         let nc = NotificationCenter.default
         nc.addObserver(forName:Notification.Name(rawValue: Utility.kAppDidEnterBackgroundNotificationKey),
@@ -243,6 +268,8 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
         nc.addObserver(forName:Notification.Name(rawValue: Utility.kAppWillEnterForegroundNotificationKey),
                        object:nil, queue:nil,
                        using:resetEntries)
+
+        nc.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
     }
 }
 
