@@ -1,0 +1,12 @@
+PODS:
+  - CountryPickerSwift (1.4.4)
+
+DEPENDENCIES:
+  - CountryPickerSwift (= 1.4.4)
+
+SPEC CHECKSUMS:
+  CountryPickerSwift: e31e67f2b95eb1fa6ad230e9eb0b49b020526d99
+
+PODFILE CHECKSUM: ef7bff27e64936dcc8961edea8f93932e421bb68
+
+COCOAPODS: 1.2.1

@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF5A8C579C5771670F9C208A /* Pods_CryptoTipper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7EE5C086727FA2DBB15B84 /* Pods_CryptoTipper.framework */; };
+		D45A4A0B1F42698B001D5D7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45A4A0A1F42698B001D5D7D /* AppDelegate.swift */; };
+		D45A4A0D1F42698B001D5D7D /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45A4A0C1F42698B001D5D7D /* CalculatorVC.swift */; };
+		D45A4A101F42698B001D5D7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45A4A0E1F42698B001D5D7D /* Main.storyboard */; };
+		D45A4A121F42698B001D5D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45A4A111F42698B001D5D7D /* Assets.xcassets */; };
+		D45A4A151F42698B001D5D7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45A4A131F42698B001D5D7D /* LaunchScreen.storyboard */; };
+		D45A4A1D1F43F0AA001D5D7D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45A4A1C1F43F0AA001D5D7D /* Utility.swift */; };
+		D4A881821F4670BA00F3CDB0 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A881811F4670BA00F3CDB0 /* SettingsVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D7EE5C086727FA2DBB15B84 /* Pods_CryptoTipper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTipper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D45A4A071F42698B001D5D7D /* CryptoTipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTipper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D45A4A0A1F42698B001D5D7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D45A4A0C1F42698B001D5D7D /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
+		D45A4A0F1F42698B001D5D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D45A4A111F42698B001D5D7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D45A4A141F42698B001D5D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D45A4A161F42698B001D5D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D45A4A1C1F43F0AA001D5D7D /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		D4A881811F4670BA00F3CDB0 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		EF700AB4AD48DABD3C8E084A /* Pods-CryptoTipper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTipper.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTipper/Pods-CryptoTipper.release.xcconfig"; sourceTree = "<group>"; };
+		FE0BA2356FFFE49F2DE63092 /* Pods-CryptoTipper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTipper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTipper/Pods-CryptoTipper.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D45A4A041F42698B001D5D7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF5A8C579C5771670F9C208A /* Pods_CryptoTipper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D45A49FE1F42698B001D5D7D = {
+			isa = PBXGroup;
+			children = (
+				D45A4A091F42698B001D5D7D /* CryptoTipper */,
+				D45A4A081F42698B001D5D7D /* Products */,
+				DBAF18480DD833899A5F006B /* Pods */,
+				E973B28D8D101F95EC6A226F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D45A4A081F42698B001D5D7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D45A4A071F42698B001D5D7D /* CryptoTipper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D45A4A091F42698B001D5D7D /* CryptoTipper */ = {
+			isa = PBXGroup;
+			children = (
+				D45A4A0A1F42698B001D5D7D /* AppDelegate.swift */,
+				D45A4A0C1F42698B001D5D7D /* CalculatorVC.swift */,
+				D4A881811F4670BA00F3CDB0 /* SettingsVC.swift */,
+				D45A4A1C1F43F0AA001D5D7D /* Utility.swift */,
+				D45A4A0E1F42698B001D5D7D /* Main.storyboard */,
+				D45A4A111F42698B001D5D7D /* Assets.xcassets */,
+				D45A4A131F42698B001D5D7D /* LaunchScreen.storyboard */,
+				D45A4A161F42698B001D5D7D /* Info.plist */,
+			);
+			path = CryptoTipper;
+			sourceTree = "<group>";
+		};
+		DBAF18480DD833899A5F006B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE0BA2356FFFE49F2DE63092 /* Pods-CryptoTipper.debug.xcconfig */,
+				EF700AB4AD48DABD3C8E084A /* Pods-CryptoTipper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E973B28D8D101F95EC6A226F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D7EE5C086727FA2DBB15B84 /* Pods_CryptoTipper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D45A4A061F42698B001D5D7D /* CryptoTipper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D45A4A191F42698B001D5D7D /* Build configuration list for PBXNativeTarget "CryptoTipper" */;
+			buildPhases = (
+				7CD833247F5C50B22DFED82A /* [CP] Check Pods Manifest.lock */,
+				D45A4A031F42698B001D5D7D /* Sources */,
+				D45A4A041F42698B001D5D7D /* Frameworks */,
+				D45A4A051F42698B001D5D7D /* Resources */,
+				54115CFA05D2EE4BCB8427EE /* [CP] Embed Pods Frameworks */,
+				795C383392DF46C3AE4B2ED1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CryptoTipper;
+			productName = CryptoTipper;
+			productReference = D45A4A071F42698B001D5D7D /* CryptoTipper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D45A49FF1F42698B001D5D7D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Robert Enriquez";
+				TargetAttributes = {
+					D45A4A061F42698B001D5D7D = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = G87QTK58LT;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D45A4A021F42698B001D5D7D /* Build configuration list for PBXProject "CryptoTipper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D45A49FE1F42698B001D5D7D;
+			productRefGroup = D45A4A081F42698B001D5D7D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D45A4A061F42698B001D5D7D /* CryptoTipper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D45A4A051F42698B001D5D7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45A4A151F42698B001D5D7D /* LaunchScreen.storyboard in Resources */,
+				D45A4A121F42698B001D5D7D /* Assets.xcassets in Resources */,
+				D45A4A101F42698B001D5D7D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54115CFA05D2EE4BCB8427EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoTipper/Pods-CryptoTipper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		795C383392DF46C3AE4B2ED1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoTipper/Pods-CryptoTipper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CD833247F5C50B22DFED82A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D45A4A031F42698B001D5D7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45A4A0D1F42698B001D5D7D /* CalculatorVC.swift in Sources */,
+				D4A881821F4670BA00F3CDB0 /* SettingsVC.swift in Sources */,
+				D45A4A0B1F42698B001D5D7D /* AppDelegate.swift in Sources */,
+				D45A4A1D1F43F0AA001D5D7D /* Utility.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D45A4A0E1F42698B001D5D7D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D45A4A0F1F42698B001D5D7D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D45A4A131F42698B001D5D7D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D45A4A141F42698B001D5D7D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D45A4A171F42698B001D5D7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D45A4A181F42698B001D5D7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D45A4A1A1F42698B001D5D7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE0BA2356FFFE49F2DE63092 /* Pods-CryptoTipper.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G87QTK58LT;
+				INFOPLIST_FILE = CryptoTipper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robegamesios.CryptoTipper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D45A4A1B1F42698B001D5D7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF700AB4AD48DABD3C8E084A /* Pods-CryptoTipper.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G87QTK58LT;
+				INFOPLIST_FILE = CryptoTipper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robegamesios.CryptoTipper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D45A4A021F42698B001D5D7D /* Build configuration list for PBXProject "CryptoTipper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45A4A171F42698B001D5D7D /* Debug */,
+				D45A4A181F42698B001D5D7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D45A4A191F42698B001D5D7D /* Build configuration list for PBXNativeTarget "CryptoTipper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45A4A1A1F42698B001D5D7D /* Debug */,
+				D45A4A1B1F42698B001D5D7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D45A49FF1F42698B001D5D7D /* Project object */;
+}
