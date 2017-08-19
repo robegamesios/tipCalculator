@@ -209,6 +209,9 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
             Utility.saveNumberOfPeople(value: "2")
             Utility.setfirstLaunch()
         }
+        
+        inputTextField.placeholder = currentCurrency.0
+        inputTaxTextField.placeholder = currentCurrency.0
     }
     
     func resetLastTimeOpened(notification: Notification) -> Void {
