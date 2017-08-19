@@ -274,7 +274,7 @@
                     <navigationItem key="navigationItem" title="CryptoTipper" id="7Bh-RC-79M">
                         <barButtonItem key="rightBarButtonItem" image="option_icon" id="aH3-nb-01M">
                             <connections>
-                                <segue destination="gLp-1T-do4" kind="show" id="hhz-vu-f9X"/>
+                                <segue destination="HWH-cj-N9n" kind="presentation" modalTransitionStyle="flipHorizontal" id="hhz-vu-f9X"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -295,7 +295,7 @@
             </objects>
             <point key="canvasLocation" x="967" y="139"/>
         </scene>
-        <!--SettingsVC-->
+        <!--Settings-->
         <scene sceneID="QNg-qq-C3P">
             <objects>
                 <viewController id="gLp-1T-do4" customClass="SettingsVC" customModule="CryptoTipper" customModuleProvider="target" sceneMemberID="viewController">
@@ -304,11 +304,11 @@
                         <viewControllerLayoutGuide type="bottom" id="MYM-EI-uhG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a21-Kw-QZZ">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip Percentage (%)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgc-9D-Xvf">
-                                <rect key="frame" x="15" y="42" width="183" height="18"/>
+                                <rect key="frame" x="15" y="106" width="183" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Xxg-Bx-H81"/>
                                 </constraints>
@@ -317,7 +317,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Number of people" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fj-KC-daw">
-                                <rect key="frame" x="15" y="80" width="177" height="18"/>
+                                <rect key="frame" x="15" y="144" width="177" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Ixh-bg-FKw"/>
                                 </constraints>
@@ -326,7 +326,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Country code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfs-8y-JmA">
-                                <rect key="frame" x="15" y="118" width="147" height="18"/>
+                                <rect key="frame" x="15" y="182" width="147" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="iwy-R7-Qzc"/>
                                 </constraints>
@@ -335,7 +335,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zod-LR-26b">
-                                <rect key="frame" x="230" y="36" width="130" height="30"/>
+                                <rect key="frame" x="230" y="100" width="130" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BAV-qw-1U7"/>
                                     <constraint firstAttribute="width" constant="130" id="GtH-dt-FUC"/>
@@ -345,7 +345,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vtN-MS-XaZ">
-                                <rect key="frame" x="230" y="74" width="130" height="30"/>
+                                <rect key="frame" x="230" y="138" width="130" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fYe-bL-LcA"/>
                                     <constraint firstAttribute="width" constant="130" id="yId-CM-Z5r"/>
@@ -355,7 +355,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPy-dy-2FG">
-                                <rect key="frame" x="15" y="166" width="345" height="60"/>
+                                <rect key="frame" x="15" y="230" width="345" height="60"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="CEe-en-zto"/>
@@ -373,7 +373,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOg-Fb-74J">
-                                <rect key="frame" x="230" y="112" width="130" height="30"/>
+                                <rect key="frame" x="230" y="176" width="130" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BH9-im-Xpl"/>
@@ -391,7 +391,7 @@
                                 </connections>
                             </button>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIp-68-GTN" customClass="CountryPicker" customModule="CountryPicker">
-                                <rect key="frame" x="0.0" y="387" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.033082436770000001" green="0.1868043244" blue="0.2700186074" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -416,6 +416,13 @@
                             <constraint firstItem="vtN-MS-XaZ" firstAttribute="centerY" secondItem="5fj-KC-daw" secondAttribute="centerY" id="vzy-na-Z4y"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="R02-b2-PUI">
+                        <barButtonItem key="leftBarButtonItem" title="BACK" id="zQ2-DH-egj">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="gLp-1T-do4" id="gCa-l8-pBU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currencyButton" destination="vOg-Fb-74J" id="MQn-sN-AjZ"/>
                         <outlet property="numberOfPeopleTextField" destination="vtN-MS-XaZ" id="M20-lT-IJi"/>
@@ -425,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVk-oF-1KN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2647.1999999999998" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JW4-Ls-S6K">
@@ -449,6 +456,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvq-WA-bNi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="199" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RSs-vI-fz2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HWH-cj-N9n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nUC-bU-x9X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.033082436770000001" green="0.1868043244" blue="0.2700186074" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.033082436770000001" green="0.1868043244" blue="0.2700186074" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gLp-1T-do4" kind="relationship" relationship="rootViewController" id="WSm-m6-h2M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H14-M6-7WO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>

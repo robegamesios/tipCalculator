@@ -70,7 +70,6 @@ class SettingsVC: UIViewController, UITextFieldDelegate, CountryPickerDelegate {
         showPicker()
     }
     
-    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         var tipValue = tipPercentageTextField.text ?? "15"
         if tipPercentageTextField.text == "" {
@@ -93,7 +92,11 @@ class SettingsVC: UIViewController, UITextFieldDelegate, CountryPickerDelegate {
         let code = currencyButton.titleLabel?.text ?? ""
         Utility.saveCountryCode(value: code)
         
-        self.navigationController?.popViewController(animated: true)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     // MARK: CountryPicker delegate
