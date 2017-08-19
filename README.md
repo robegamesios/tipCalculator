@@ -23,7 +23,7 @@ The following **additional** features are implemented:
 
 - [X] User can choose to divide the bill amount amongst the group (e.g. 2 people, etc).
 - [X] Settings page to change the default number of people to split the bill with.
-- [X] User can choose a different country, then the currency and thousands separator will reflect the selected country's locale.
+- [X] User can choose a different country, then the currency and thousands separator will update per the country's locale.
 
 ## Video Walkthrough 
 
