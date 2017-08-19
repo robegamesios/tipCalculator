@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CryptoTipper-->
+        <!--TipMe-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CalculatorVC" customModule="CryptoTipper" customModuleProvider="target" sceneMemberID="viewController">
@@ -271,7 +271,7 @@
                             <constraint firstItem="6cA-Wk-G40" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="yCo-ko-ZCz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="CryptoTipper" id="7Bh-RC-79M">
+                    <navigationItem key="navigationItem" title="TipMe" id="7Bh-RC-79M">
                         <barButtonItem key="rightBarButtonItem" image="option_icon" id="aH3-nb-01M">
                             <connections>
                                 <segue destination="HWH-cj-N9n" kind="presentation" modalTransitionStyle="flipHorizontal" id="hhz-vu-f9X"/>
