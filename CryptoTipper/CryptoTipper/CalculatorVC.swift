@@ -11,6 +11,7 @@ import UIKit
 class CalculatorVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var inputTaxPercentageTextField: UITextField!
     @IBOutlet weak var inputTaxTextField: UITextField!
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var totalAmountLabel: UILabel!
@@ -22,6 +23,9 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var taxStringLabel: UILabel!
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var keyboardHeightConstraint: NSLayoutConstraint!
+    
+    var taxPercentage: Double = 0.00
+    var taxAmount: Double = 0.00
     
     var currentCurrency: (String, String) {
         return Utility.currencySymbol(code: Utility.savedCountryCode)
@@ -90,11 +94,15 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
     func setupTextFields() {
         inputTextField.delegate = self
         inputTextField.addTarget(self, action: #selector
-            (textFieldDidChange), for: .editingChanged)
-        
+            (textFieldDidChange(textField:)), for: .editingChanged)
+
+        inputTaxPercentageTextField.delegate = self
+        inputTaxPercentageTextField.addTarget(self, action: #selector
+            (textFieldDidChange(textField:)), for: .editingChanged)
+
         inputTaxTextField.delegate = self
         inputTaxTextField.addTarget(self, action: #selector
-            (textFieldDidChange), for: .editingChanged)
+            (textFieldDidChange(textField:)), for: .editingChanged)
     }
     
     func setupDefaultCurrencyCode() {
@@ -109,7 +117,7 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
     
     func setupView() {
         billStringLabel.text = "How much is the bill? (\(currentCurrency.0) \(currentCurrency.1))"
-        taxStringLabel.text = "How much is the tax? (\(currentCurrency.0) \(currentCurrency.1))"
+        taxStringLabel.text = "Tax amount (\(currentCurrency.0) \(currentCurrency.1))"
 
         tipRateLabel.text = Utility.savedTipPercentage
         splitLabel.text = Utility.savedNumberOfPeople
@@ -135,7 +143,42 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
     
     // MARK: Control Events
     
-    func textFieldDidChange() {
+    func textFieldDidChange(textField: UITextField) {
+        
+        let inputValue = inputTextField.text ?? "0"
+        let inputAmount = Double(inputValue) ?? 0.00
+        
+        if textField == inputTextField {
+            if taxPercentage > 0.00 {
+                taxAmount = inputAmount * (taxPercentage / 100.0)
+                inputTaxTextField.text = "\(taxAmount)"
+            }
+            
+        } else
+        if textField == inputTaxPercentageTextField {
+            let inputValue = inputTaxPercentageTextField.text ?? "0"
+            
+            taxPercentage = Double(inputValue) ?? 0.00
+            taxAmount = inputAmount * (taxPercentage / 100.0)
+            
+            if taxAmount == 0 {
+                inputTaxTextField.text = ""
+            } else {
+                inputTaxTextField.text = "\(taxAmount)"
+            }
+            
+        } else if textField == inputTaxTextField {
+            let inputValue = inputTaxTextField.text ?? "0"
+            taxAmount = Double(inputValue) ?? 0.00
+            taxPercentage = (taxAmount / inputAmount) * 100.0
+            
+            if taxPercentage == 0 {
+                inputTaxPercentageTextField.text = ""
+            } else {
+                inputTaxPercentageTextField.text = "\(taxPercentage)"
+            }
+        }
+        
         updateTotal()
     }
     
