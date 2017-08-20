@@ -149,6 +149,13 @@ class CalculatorVC: UIViewController, UITextFieldDelegate {
         let inputAmount = Double(inputValue) ?? 0.00
         
         if textField == inputTextField {
+            if inputAmount == 0 {
+                taxPercentage = 0
+                taxAmount = 0
+                inputTaxPercentageTextField.text = ""
+                inputTaxTextField.text = ""
+            }
+            
             if taxPercentage > 0.00 {
                 taxAmount = inputAmount * (taxPercentage / 100.0)
                 inputTaxTextField.text = "\(taxAmount)"
