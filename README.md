@@ -21,6 +21,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
+- [X] User can choose to enter either tax percentage or tax amount.
 - [X] User can choose to divide the bill amount amongst the group (e.g. 2 people, etc).
 - [X] Settings page to change the default number of people to split the bill with.
 - [X] User can choose a different country, then the currency and thousands separator will update per the country's locale.
@@ -30,7 +31,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-https://github.com/robegamesios/tipCalculator/blob/develop/demoGif.gif
+https://github.com/robegamesios/tipCalculator/blob/develop/demoGif2.gif
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
