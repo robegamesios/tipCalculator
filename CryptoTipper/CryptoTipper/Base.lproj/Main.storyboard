@@ -243,7 +243,7 @@
                                     <constraint firstItem="69Y-7f-oWN" firstAttribute="centerX" secondItem="Aoc-nT-vi5" secondAttribute="centerX" id="xRP-j0-gj8"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="$" textAlignment="center" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6cA-Wk-G40">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="$" textAlignment="center" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6cA-Wk-G40">
                                 <rect key="frame" x="204" y="82" width="156" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="18Q-9i-ULE"/>
@@ -266,7 +266,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="%" textAlignment="center" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AVy-HH-9cV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="%" textAlignment="center" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AVy-HH-9cV">
                                 <rect key="frame" x="53.5" y="82" width="80" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Z83-O1-JAf"/>
